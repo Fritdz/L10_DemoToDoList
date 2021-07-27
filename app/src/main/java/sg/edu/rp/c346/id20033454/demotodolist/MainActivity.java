@@ -34,6 +34,17 @@ public class MainActivity extends AppCompatActivity {
         alToDo.add(item1);
         alToDo.add(item2);
 
+        Calendar date3 = Calendar.getInstance();
+        date3.set(2021,9,3);
+        Calendar date4 = Calendar.getInstance();
+        date4.set(2021,9,5);
+
+        ToDoItem item3 = new ToDoItem("Complete your notes", date3);
+        ToDoItem item4 = new ToDoItem("Complete your PS enhancement", date4);
+
+        alToDo.add(item3);
+        alToDo.add(item4);
+
         caToDo = new CustomAdapter(this, R.layout.row, alToDo);
 
         lvToDo.setAdapter(caToDo);

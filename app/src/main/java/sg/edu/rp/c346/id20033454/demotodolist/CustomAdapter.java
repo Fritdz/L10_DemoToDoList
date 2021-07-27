@@ -1,6 +1,7 @@
 package sg.edu.rp.c346.id20033454.demotodolist;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class CustomAdapter extends ArrayAdapter {
 
@@ -41,8 +43,17 @@ public class CustomAdapter extends ArrayAdapter {
 
         ToDoItem currentList = toDoList.get(position);
 
-        tvTitle.setText(currentList.getTitle());
-        tvDate.setText(currentList.toString());
+        if(currentList.getDate().get(Calendar.YEAR)==2021){
+            tvTitle.setText(currentList.getTitle());
+            tvDate.setText(currentList.toString());
+            tvDate.setTextColor(Color.RED);
+        } else {
+            tvTitle.setText(currentList.getTitle());
+            tvDate.setText(currentList.toString());
+        }
+
+
+
 
         return rowView;
     }
